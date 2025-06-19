@@ -1,0 +1,28 @@
+<h2 class="header">Действующие маршруты IPv4</h2>
+<table class="routes-table">
+  <thead>
+    <tr>
+      <th class="routes-header" (click)="sort('address')">
+        Адрес назначения<span *ngIf="sortColumn === 'address'"
+          >{{sortDirection === 'asc' ? '▲' : '▼'}}</span
+        >
+      </th>
+      <th class="routes-header" (click)="sort('gateway')">
+        Шлюз<span *ngIf="sortColumn === 'gateway'"
+          >{{sortDirection === 'asc' ? '▲' : '▼'}}</span
+        >
+      </th>
+      <th class="routes-header" (click)="sort('interface')">
+        Интерфейс<span *ngIf="sortColumn === 'interface'"></span>{{sortDirection
+        === 'asc' ? '▲' : '▼'}}
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let route of routes$ | async">
+      <td>{{route.address}}/{{route.mask}}</td>
+      <td>{{route.gateway}}</td>
+      <td>{{route.interface}}</td>
+    </tr>
+  </tbody>
+</table>
