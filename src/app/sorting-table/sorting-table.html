@@ -1,20 +1,51 @@
-<h2 class="header">Действующие маршруты IPv4</h2>
+<h2 class="title">Действующие маршруты IPv4</h2>
 <table class="routes-table">
   <thead>
     <tr>
       <th class="routes-header" (click)="sort('address')">
-        Адрес назначения<span *ngIf="sortColumn === 'address'"
-          >{{sortDirection === 'asc' ? '▲' : '▼'}}</span
-        >
+        Адрес назначения
+        <span class="sort-arrows">
+          <span
+            class="arrow"
+            [class.active]="sortColumn === 'address' && sortDirection === 'asc'"
+            >▲</span
+          >
+          <span
+            class="arrow"
+            [class.active]="sortColumn === 'address' && sortDirection === 'desc'"
+            >▼</span
+          >
+        </span>
       </th>
       <th class="routes-header" (click)="sort('gateway')">
-        Шлюз<span *ngIf="sortColumn === 'gateway'"
-          >{{sortDirection === 'asc' ? '▲' : '▼'}}</span
-        >
+        Шлюз
+        <span class="sort-arrows">
+          <span
+            class="arrow"
+            [class.active]="sortColumn === 'gateway' && sortDirection === 'asc'"
+            >▲</span
+          >
+          <span
+            class="arrow"
+            [class.active]="sortColumn === 'gateway' && sortDirection === 'desc'"
+            >▼</span
+          >
+        </span>
       </th>
       <th class="routes-header" (click)="sort('interface')">
-        Интерфейс<span *ngIf="sortColumn === 'interface'"></span>{{sortDirection
-        === 'asc' ? '▲' : '▼'}}
+        Интерфейс
+        <span class="sort-arrows">
+          <span
+            class="arrow"
+            [class.active]="sortColumn === 'interface' && sortDirection === 'asc'"
+            >▲</span
+          >
+          <span
+            class="arrow"
+            [class.active]="sortColumn === 'interface' && sortDirection === 'desc'"
+            >▼</span
+          >
+        </span>
       </th>
     </tr>
   </thead>

@@ -1,5 +1,4 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { SortingTable } from './sorting-table';
 
 describe('SortingTable', () => {
@@ -8,9 +7,8 @@ describe('SortingTable', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [SortingTable]
-    })
-    .compileComponents();
+      imports: [SortingTable],
+    }).compileComponents();
 
     fixture = TestBed.createComponent(SortingTable);
     component = fixture.componentInstance;
